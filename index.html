@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catatan Dagang Ayur Kusna</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#4CAF50" />
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("service-worker.js")
+            .then((res) => console.log("Service Worker Registered"))
+            .catch((err) => console.log("Service Worker Error", err));
+        });
+      }
+    </script>
+    <!-- Splash Screen iOS -->
+    <link rel="apple-touch-startup-image" href="sakti.jpg" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Sayur Kusna" />
+    <link rel="apple-touch-icon" href="sakti.jpg" />
+  </head>
+  <body>
+    <!-- Splash Loading Manual -->
+    <div id="splash">
+      <img src="sakti.jpg" alt="Sayur Kusna" />
+    </div>
+
+    <nav>
+      <div class="logo">
+        <img src="sakti.jpg" alt="Logo Sayur Kusna" />
+        <span>Sayur Kusna</span>
+      </div>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <ul id="nav-list">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#pembelian">Pembelian Barang</a></li>
+        <li><a href="#pembagian">Pembagian Bungkus</a></li>
+        <li><a href="#hutang">Hutang</a></li>
+        <li><a href="#pengeluaran">Pengeluaran</a></li>
+      </ul>
+    </nav>
+
+    <div class="container" id="beranda">
+      <!-- ===== Beranda/Profil ===== -->
+      <div class="header-banner">
+        <img src="sakti.jpg" alt="Logo Sayur Kusna" />
+        <h1>Sayur Kusna</h1>
+        <p>Catatan Dagang, Hutang, dan Pengeluaran</p>
+      </div>
+
+      <section class="section">
+        <h2>📜 Tentang Aplikasi</h2>
+        <p>
+          Selamat datang! Ini adalah aplikasi sederhana untuk membantu Anda,
+          <b>Sayur Kusna</b>, dalam mengelola dagangan sayur keliling.
+        </p>
+        <ul>
+          <li>
+            ✅ Catat barang dagangan, harga beli, harga jual, dan keuntungan.
+          </li>
+          <li>✅ Catat hutang pelanggan dengan mudah.</li>
+          <li>
+            ✅ Catat pengeluaran harian seperti bensin, makan, atau lainnya.
+          </li>
+          <li>
+            ✅ Semua fitur dalam satu halaman ini, tinggal scroll ke bawah!
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===== Catatan Dagang ===== -->
+      <section class="section">
+        <section class="section" id="pembelian">
+          <h2>🛒 Catatan Pembelian Barang</h2>
+          <div class="form">
+            <input type="text" id="namaPembelian" placeholder="Nama Barang" />
+            <input
+              type="number"
+              id="hargaPembelian"
+              placeholder="Harga per Barang"
+            />
+            <input type="number" id="jumlahPembelian" placeholder="Jumlah" />
+            <button onclick="tambahPembelian()">Tambah</button>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Nama Barang</th>
+                <th>Harga</th>
+                <th>Jumlah</th>
+                <th>Subtotal</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="tabelPembelian"></tbody>
+          </table>
+
+          <div class="total">
+            <h3>Total Pembelian: Rp <span id="totalPembelian">0</span></h3>
+          </div>
+          <section class="section" id="pembagian">
+            <h2>📦 Perhitungan Pembagian Bungkus</h2>
+            <div class="form">
+              <input type="text" id="namaBungkus" placeholder="Nama Barang" />
+              <input
+                type="number"
+                id="hargaKulakanBungkus"
+                placeholder="Harga Kulakan per Kg/Ikat"
+              />
+              <input
+                type="number"
+                id="jumlahKulakanBungkus"
+                placeholder="Jumlah Kulakan (Kg/Ikat)"
+              />
+              <input
+                type="number"
+                id="totalBungkus"
+                placeholder="Total Bungkus"
+              />
+              <button onclick="tambahBungkus()">Hitung</button>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Nama Barang</th>
+                  <th>Harga Kulakan</th>
+                  <th>Jumlah Kulakan</th>
+                  <th>Total Bungkus</th>
+                  <th>Modal per Bungkus</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="tabelBungkus"></tbody>
+            </table>
+          </section>
+        </section>
+
+        <h2>📦 Catatan Dagang</h2>
+        <div class="form">
+          <input type="text" id="namaBarang" placeholder="Nama Barang" />
+          <input type="number" id="hargaBeli" placeholder="Harga Beli" />
+          <input type="number" id="hargaJual" placeholder="Harga Jual" />
+          <input type="number" id="jumlah" placeholder="Jumlah" />
+          <button onclick="tambahBarang()">Tambah Barang</button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Harga Beli</th>
+              <th>Harga Jual</th>
+              <th>Jumlah</th>
+              <th>Keuntungan</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tabelBarang"></tbody>
+        </table>
+
+        <div class="total">
+          <h3>Total Keuntungan: Rp <span id="totalKeuntungan">0</span></h3>
+        </div>
+      </section>
+
+      <!-- ===== Catatan Hutang ===== -->
+      <section class="section">
+        <h2>💰 Catatan Hutang</h2>
+        <div class="form">
+          <input type="text" id="namaPelanggan" placeholder="Nama Pelanggan" />
+          <input type="number" id="jumlahHutang" placeholder="Jumlah Hutang" />
+          <input
+            type="text"
+            id="keterangan"
+            placeholder="Keterangan (misal tanggal)"
+          />
+          <button onclick="tambahHutang()">Tambah Hutang</button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Jumlah</th>
+              <th>Keterangan</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tabelHutang"></tbody>
+        </table>
+
+        <div class="total">
+          <h3>Total Hutang: Rp <span id="totalHutang">0</span></h3>
+        </div>
+      </section>
+
+      <!-- ===== Catatan Pengeluaran ===== -->
+      <section class="section">
+        <h2>🧾 Catatan Pengeluaran</h2>
+        <div class="form">
+          <input
+            type="text"
+            id="namaPengeluaran"
+            placeholder="Keterangan Pengeluaran"
+          />
+          <input
+            type="number"
+            id="jumlahPengeluaran"
+            placeholder="Jumlah (Rp)"
+          />
+          <button onclick="tambahPengeluaran()">Tambah Pengeluaran</button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Keterangan</th>
+              <th>Jumlah</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tabelPengeluaran"></tbody>
+        </table>
+
+        <div class="total">
+          <h3>Total Pengeluaran: Rp <span id="totalPengeluaran">0</span></h3>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

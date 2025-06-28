@@ -1,0 +1,630 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+#splash {
+  background-color: #4caf50;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#splash img {
+  width: 150px;
+  height: 150px;
+}
+
+/* === RESET DAN FULLSCREEN === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+/* === SPLASH SCREEN === */
+#splash {
+  background-color: #4caf50;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#splash img {
+  width: 150px;
+  height: 150px;
+}
+
+/* === NAVBAR PRO + RESPONSIVE === */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4caf50;
+  padding: 10px 20px;
+  color: white;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+nav .logo img {
+  height: 40px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ddd;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* === Responsive Hamburger === */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #4caf50;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .form {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  table th,
+  table td {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+
+body {
+  background: #f4f4f4;
+  background-image: url(sakti.jpg);
+}
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4caf50;
+  padding: 10px 20px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+nav .logo img {
+  height: 40px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ddd;
+}
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #4caf50;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 5px;
+}
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.header-banner {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 30px 20px;
+  border-bottom: 4px solid #4caf50;
+}
+
+.header-banner img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #4caf50;
+  margin-bottom: 15px;
+}
+/* Navbar Style */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4caf50;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-circle {
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  color: #4caf50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  border: 2px solid #4caf50;
+}
+
+.navbar .logo span {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #c8f7c5;
+}
+
+.header-banner h1 {
+  margin-bottom: 5px;
+  color: #4caf50;
+  font-size: 36px;
+}
+
+.header-banner p {
+  color: #555;
+  font-size: 18px;
+}
+
+.navbar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.judul h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.judul p {
+  margin: 0;
+  font-size: 14px;
+  color: #e0f7e9;
+}
+
+.container {
+  max-width: 100%;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+ul {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+ul li {
+  margin-bottom: 6px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form input {
+  flex: 1 1 200px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.form button {
+  padding: 10px 20px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form button:hover {
+  background: #45a049;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+table th {
+  background: #4caf50;
+  color: white;
+}
+
+.total {
+  margin-top: 10px;
+  font-size: 18px;
+  text-align: right;
+  color: #333;
+}
+#splash img {
+  width: 150px;
+  height: 150px;
+  animation: zoom 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+/* ==== RESPONSIVE UNTUK MOBILE ==== */
+@media (max-width: 768px) {
+  /* Navbar */
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav .logo {
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #4caf50;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 8px 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+
+  /* Section */
+  section {
+    padding: 20px 10px;
+  }
+
+  h1,
+  h2 {
+    font-size: 20px;
+  }
+
+  /* Form */
+  .form {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form input,
+  .form button {
+    width: 100%;
+    min-width: auto;
+  }
+
+  /* Table */
+  table {
+    font-size: 14px;
+    overflow-x: auto;
+    display: block;
+  }
+
+  th,
+  td {
+    padding: 8px;
+  }
+
+  /* Splash */
+  #splash img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* ==== RESPONSIVE FORM DAN SECTION ==== */
+section {
+  width: 100%;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form input,
+.form button {
+  padding: 10px;
+  font-size: 16px;
+  flex: 1;
+  min-width: 150px;
+  max-width: 250px; /* ✅ Tambahkan ini */
+}
+
+/* ==== TABLE AGAR TIDAK TERLALU BESAR ==== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  max-width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ==== RESPONSIVE UNTUK MOBILE ==== */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #4caf50;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+
+  section {
+    padding: 20px 10px;
+  }
+
+  h1,
+  h2 {
+    font-size: 20px;
+  }
+
+  .form {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  .form input,
+  .form button {
+    width: auto;
+    flex: none;
+    min-width: 120px;
+    max-width: 200px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    font-size: 16px;
+    flex: 0 1 180px; /* ✅ KUNCI DI SINI */
+    max-width: 180px;
+  }
+
+  table {
+    font-size: 12px;
+    overflow-x: auto;
+    display: block;
+  }
+
+  th,
+  td {
+    padding: 6px;
+  }
+
+  #splash img {
+    width: 120px;
+    height: 120px;
+  }
+}
